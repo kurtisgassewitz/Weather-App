@@ -30,8 +30,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	
 	let gradientLayer = CAGradientLayer()
 	let APIKey = "e9e3a02990911a12e0225e61c9991db6"
-	var lat = 45.42
-	var lon = 75.69
+	var lat = 50.9981
+	var lon = -118.1957
 	var activityIndicator: NVActivityIndicatorView!
 	let locationManager = CLLocationManager()
 	
@@ -68,8 +68,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
 		let location = locations[0]
-		lat = location.coordinate.latitude
-		lon = location.coordinate.longitude
+		//lat = location.coordinate.latitude
+		//lon = location.coordinate.longitude
 		
 		Alamofire.request("http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(APIKey)&units=metric").responseJSON {
 			response in
